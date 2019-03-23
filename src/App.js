@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { InMemoryCache, defaultDataIdFromObject } from 'apollo-cache-inmemory';
+
+import { Navigation } from './components/Navigation';
 
 import ContinentsPage from './pages/ContinentsPage';
 import CountriesPage from './pages/CountriesPage';
@@ -31,17 +33,7 @@ class App extends Component {
           <header>
             Countries App
           </header>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/continents/">Continents</Link>
-            </li>
-            <li>
-              <Link to="/countries/">Countries</Link>
-            </li>
-          </ul>
+          <Navigation />
           <Route path="/continents" exact component={ContinentsPage} />
           <Route path="/countries" exact component={CountriesPage} />
         </Router>
