@@ -4,6 +4,10 @@ import { ApolloProvider } from "react-apollo";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { InMemoryCache, defaultDataIdFromObject } from 'apollo-cache-inmemory';
 
+import Continents from './pages/Continents';
+import Countries from './pages/Countries';
+
+
 const cache = new InMemoryCache({
   dataIdFromObject: object => {
     console.debug('DEBUG: object.__typename', object.__typename)
@@ -19,14 +23,6 @@ const client = new ApolloClient({
   uri: "https://countries.trevorblades.com/",
   cache
 });
-
-function Continents() {
-  return <h3>Continents</h3>;
-}
-
-function Countries() {
-  return <h3>Countries</h3>;
-}
 
 class App extends Component {
   render() {
