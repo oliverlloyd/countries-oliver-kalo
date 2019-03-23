@@ -7,6 +7,7 @@ type Props = {
 }
 
 const Country = ({country}: Props) => {
+  console.log('cou', country)
   const {
     name,
     code,
