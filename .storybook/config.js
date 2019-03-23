@@ -7,8 +7,6 @@ import { configure } from '@storybook/react';
  * resolved that package should be removed from dev dependencies.
  */
 
-function loadStories() {
-  require('../src/stories');
-}
-
-configure(loadStories, module);
+// Import all files ending in *.stories.js(x)
+const req = require.context('../src', true, /.stories.jsx?$/);
+configure(() => req.keys().forEach(req), module);
