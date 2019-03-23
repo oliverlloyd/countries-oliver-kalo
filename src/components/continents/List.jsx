@@ -8,7 +8,6 @@ type Props = {
 }
 
 const List = ({ continents }: Props) => {
-  console.log(continents)
   return (
     <>
       <h3>All the continents</h3>
