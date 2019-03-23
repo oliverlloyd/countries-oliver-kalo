@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { InMemoryCache, defaultDataIdFromObject } from 'apollo-cache-inmemory';
 
 import { Navigation } from './components/Navigation';
+import { Header } from './components/Header';
 
 import ContinentsPage from './pages/ContinentsPage';
 import CountriesPage from './pages/CountriesPage';
@@ -30,9 +31,7 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <Router>
-          <header>
-            Countries App
-          </header>
+          <Header />
           <Navigation />
           <Route path="/continents" exact component={ContinentsPage} />
           <Route path="/countries" exact component={CountriesPage} />
