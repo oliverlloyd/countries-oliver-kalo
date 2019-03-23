@@ -9,6 +9,7 @@ import CountriesPage from './pages/CountriesPage';
 
 
 const cache = new InMemoryCache({
+  // TODO: Verify these custom keys are working
   dataIdFromObject: object => {
     console.debug('DEBUG: object.__typename', object.__typename)
     switch (object.__typename) {

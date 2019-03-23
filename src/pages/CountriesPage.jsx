@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { Countries } from '../components/countries';
+
 
 const CountriesPage = () => {
-  return <h3>Countries</h3>;
+  return <Countries />;
 }
 
 export default CountriesPage;

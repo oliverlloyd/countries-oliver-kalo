@@ -1,19 +1,19 @@
 import React from 'react';
 import { Query } from "react-apollo";
 
-import { FetchContinents } from '../../apollo/queries';
+import { FetchCountries } from '../../apollo/queries';
 
 import List from './List';
 
 
 const Data = () => {
   return (
-    <Query query={FetchContinents}>
+    <Query query={FetchCountries}>
       {({ loading, error, data }) => {
         if (loading) return "Loading..";
         if (error) return `Error! ${error.message}`;
 
-        return <List continents={data.continents}/>;
+        return <List countries={data.countries}/>;
       }}
     </Query>
   )
