@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-const Countries = () => {
+const CountriesPage = () => {
   return <h3>Countries</h3>;
 }
 
-export default Countries;
+export default CountriesPage;

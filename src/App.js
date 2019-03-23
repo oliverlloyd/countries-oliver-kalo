@@ -4,8 +4,8 @@ import { ApolloProvider } from "react-apollo";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { InMemoryCache, defaultDataIdFromObject } from 'apollo-cache-inmemory';
 
-import Continents from './pages/Continents';
-import Countries from './pages/Countries';
+import ContinentsPage from './pages/ContinentsPage';
+import CountriesPage from './pages/CountriesPage';
 
 
 const cache = new InMemoryCache({
@@ -43,8 +43,8 @@ class App extends Component {
               <Link to="/countries/">Countries</Link>
             </li>
           </ul>
-          <Route path="/continents" exact component={Continents} />
-          <Route path="/countries" exact component={Countries} />
+          <Route path="/continents" exact component={ContinentsPage} />
+          <Route path="/countries" exact component={CountriesPage} />
         </Router>
       </ApolloProvider>
     );
