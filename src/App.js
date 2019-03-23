@@ -9,12 +9,10 @@ import CountriesPage from './pages/CountriesPage';
 
 
 const cache = new InMemoryCache({
-  // TODO: Verify these custom keys are working
   dataIdFromObject: object => {
-    console.debug('DEBUG: object.__typename', object.__typename)
     switch (object.__typename) {
-      case 'continent': return `continent:${object.code}`; // use `continent` prefix and `code` as the primary key
-      case 'country': return `country:${object.code}`; // use `country` prefix and `code` as the primary key
+      case 'Continent': return `continent:${object.code}`; // use `continent` prefix and `code` as the primary key
+      case 'Country': return `country:${object.code}`; // use `country` prefix and `code` as the primary key
       default: return defaultDataIdFromObject(object); // fall back to default handling
     }
   }

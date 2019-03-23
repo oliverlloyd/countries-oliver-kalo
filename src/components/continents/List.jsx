@@ -1,19 +1,19 @@
 // @flow
 import React from 'react';
 
+import { Continent } from '../Continent';
 
 type Props = {
-  continents: [Continent],
+  continents: [ContinentType],
 }
 
 const List = ({ continents }: Props) => {
+  console.log(continents)
   return (
     <>
       <h3>All the continents</h3>
       {continents.map(continent => (
-        <div key={continent.code}>
-          {continent.name}
-        </div>
+        <Continent key={continent.code} continent={continent} />
       ))}
     </>
   );

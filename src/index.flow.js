@@ -1,19 +1,19 @@
-declare type Continent = {
+declare type ContinentType = {
   code: string,
   name: string,
-  countries?: [Country],
+  countries?: [CountryType],
 };
 
-declare type Country = {
+declare type CountryType = {
   code: string,
   name: string,
   phone?: string,
   currency?: string,
   emoji?: string,
-  languages?: [Language],
+  languages?: [LanguageType],
 }
 
-declare type Language = {
+declare type LanguageType = {
   code: string,
   name: string,
 }

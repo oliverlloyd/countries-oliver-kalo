@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Continents } from '../components/continents';
+import { Continents } from '../components/Continents';
 
 
 const ContinentsPage = () => {

@@ -1,9 +1,11 @@
 // @flow
 import React from 'react';
 
+import { Country } from '../Country';
+
 
 type Props = {
-  countries: [Country],
+  countries: [CountryType],
 }
 
 const List = ({ countries }: Props) => {
@@ -11,9 +13,7 @@ const List = ({ countries }: Props) => {
     <>
       <h3>All the countries</h3>
       {countries.map(country => (
-        <div key={country.code}>
-          {country.name}
-        </div>
+        <Country key={country.code} country={country} />
       ))}
     </>
   );
