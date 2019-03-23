@@ -10,9 +10,10 @@ const Country = ({country}: Props) => {
   const {
     name,
     code,
+    emoji,
   } = country;
 
-  return <div>{name}, {code}</div>;
+  return <div>{name}, {code} {emoji ? emoji : ''}</div>;
 }
 
 export default Country;
