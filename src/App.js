@@ -2,10 +2,22 @@ import React, { Component } from 'react';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { InMemoryCache, defaultDataIdFromObject } from 'apollo-cache-inmemory';
 
+const cache = new InMemoryCache({
+  dataIdFromObject: object => {
+    console.debug('DEBUG: object.__typename', object.__typename)
+    switch (object.__typename) {
+      case 'continent': return `continent:${object.code}`; // use `continent` prefix and `code` as the primary key
+      case 'country': return `country:${object.code}`; // use `country` prefix and `code` as the primary key
+      default: return defaultDataIdFromObject(object); // fall back to default handling
+    }
+  }
+});
 
 const client = new ApolloClient({
-  uri: "https://countries.trevorblades.com/"
+  uri: "https://countries.trevorblades.com/",
+  cache
 });
 
 function Continents() {
