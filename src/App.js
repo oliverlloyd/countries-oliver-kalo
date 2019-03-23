@@ -11,6 +11,7 @@ import ContinentsPage from './pages/ContinentsPage';
 import CountriesPage from './pages/CountriesPage';
 
 
+// TODO: extract this and maybe also ApolloProvider out to a separate file to keep things readable
 const cache = new InMemoryCache({
   dataIdFromObject: object => {
     switch (object.__typename) {
@@ -22,7 +23,7 @@ const cache = new InMemoryCache({
 });
 
 const client = new ApolloClient({
-  uri: "https://countries.trevorblades.com/",
+  uri: "https://countries.trevorblades.com/", // TODO: Pull in from an env var
   cache
 });
 
@@ -33,6 +34,7 @@ class App extends Component {
         <Router>
           <Header />
           <Navigation />
+          {/* TODO: Put routes in separate file */}
           <Route path="/continents" exact component={ContinentsPage} />
           <Route path="/countries" exact component={CountriesPage} />
         </Router>
