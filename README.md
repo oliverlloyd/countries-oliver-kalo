@@ -1,5 +1,10 @@
 ## List countries
 
+### Quick start
+
+Run App with: `yarn && yarn start`
+Run Storybook with: `yarn storybook`
+
 ### A couple of basic pages demonstrating fetching data using Apollo. Things of note:
 
 - Built using Create React App, obviously.
@@ -32,4 +37,3 @@
   serves as a really nice visual library of all you components. Great for shared repos of common components. I like keeping
   each comps stories local in their folders. You can make Storybook part of the build process checking for pixel changes
   between versions (I've not implemented this but friends say good things and I'm keen to play with it).
-  
