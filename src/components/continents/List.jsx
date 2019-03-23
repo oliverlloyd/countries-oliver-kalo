@@ -3,6 +3,11 @@ import React from 'react';
 
 import { Continent } from '../Continent';
 
+import {
+  Centered,
+} from '../../styles/common';
+
+
 type Props = {
   continents: [ContinentType],
 }
@@ -10,7 +15,7 @@ type Props = {
 const List = ({ continents }: Props) => {
   return (
     <>
-      <h3>All the continents</h3>
+      <Centered><h3>All the continents</h3></Centered>
       {continents.map(continent => (
         <Continent key={continent.code} continent={continent} />
       ))}
