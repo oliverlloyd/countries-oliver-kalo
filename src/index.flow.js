@@ -1,17 +1,16 @@
 declare type Continent = {
   code: string,
   name: string,
-  countries: [Country],
+  countries?: [Country],
 };
 
 declare type Country = {
   code: string,
   name: string,
-  phone: string,
-  currency: string,
-  emoji: string,
-  languages: [Language],
-
+  phone?: string,
+  currency?: string,
+  emoji?: string,
+  languages?: [Language],
 }
 
 declare type Language = {

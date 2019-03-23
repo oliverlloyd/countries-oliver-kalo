@@ -1,7 +1,12 @@
+// @flow
 import React from 'react';
 
 
-const List = ({ countries }) => {
+type Props = {
+  countries: [Country],
+}
+
+const List = ({ countries }: Props) => {
   return (
     <>
       <h3>All the countries</h3>
