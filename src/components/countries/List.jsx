@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-import { Country } from '../Country';
+import { Row } from '../Row';
 
 import {
   Centered,
@@ -17,7 +17,7 @@ const List = ({ countries }: Props) => {
     <>
       <Centered><h3>All the countries</h3></Centered>
       {countries.map(country => (
-        <Country key={country.code} country={country} />
+        <Row key={country.code} country={country} />
       ))}
     </>
   );

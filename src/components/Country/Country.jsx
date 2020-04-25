@@ -5,27 +5,27 @@ import {
   Centered,
 } from '../../styles/common';
 
-import {
-  Container,
-} from './styled';
-
 
 type Props = {
+  loading?: boolean,
+  error?: string,
   country: CountryType,
 }
 
-const Country = ({country}: Props) => {
+const Country = ({country, loading, error}: Props) => {
+  if (loading) return "Loading spinner with better css...";
+  if (error) return `Error is ${error}`;
+  if (!country) return 'What we do for not country';
+
   const {
     name,
     code,
-    emoji,
+    currency,
   } = country;
 
   return (
     <Centered>
-      <Container>
-        {name}, {code} {emoji ? emoji : ''}
-      </Container>
+      <div>{name}, {code}, {currency}</div>
     </Centered>
   );
 }

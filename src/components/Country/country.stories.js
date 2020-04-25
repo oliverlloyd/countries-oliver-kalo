@@ -4,26 +4,23 @@ import { storiesOf } from '@storybook/react';
 
 import Country from './Country';
 
-var uk_without_emoji = {
-  code: 'UK',
-  name: "United Kingdom",
-};
 
-var uk_with_emoji = {
+const UK = {
   code: 'UK',
   name: "United Kingdom",
   emoji: "🇬🇧",
+  currency: "GBP",
 };
 
 storiesOf('Country', module)
-  .add('with no emoji', () => (
+  .add('of UK', () => (
     <Country
-      country={uk_without_emoji}
+      country={UK}
     />
   ))
-
-  .add('with emoji', () => (
+  
+  .add('when loading', () => (
     <Country
-      country={uk_with_emoji}
+      loading={true}
     />
   ));

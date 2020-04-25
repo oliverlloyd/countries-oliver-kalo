@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { InMemoryCache, defaultDataIdFromObject } from 'apollo-cache-inmemory';
 
 import { Navigation } from './components/Navigation';
@@ -9,6 +9,7 @@ import { Header } from './components/Header';
 
 import ContinentsPage from './pages/ContinentsPage';
 import CountriesPage from './pages/CountriesPage';
+import CountryPage from './pages/CountryPage';
 
 
 // TODO: extract this and maybe also ApolloProvider out to a separate file to keep things readable
@@ -35,8 +36,11 @@ class App extends Component {
           <Header />
           <Navigation />
           {/* TODO: Put routes in separate file */}
-          <Route path="/continents" exact component={ContinentsPage} />
-          <Route path="/countries" exact component={CountriesPage} />
+          <Switch>
+            <Route path="/continents" exact component={ContinentsPage} />
+            <Route path="/countries" exact component={CountriesPage} />
+            <Route path="/countries/:code" exact component={CountryPage} />
+          </Switch>
         </Router>
       </ApolloProvider>
     );
