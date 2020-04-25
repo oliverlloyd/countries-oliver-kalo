@@ -14,7 +14,7 @@ type Props = {
 
 const Country = ({country, loading, error}: Props) => {
   if (loading) return "Loading spinner with better css...";
-  if (error) return `Error is ${error}`;
+  if (error) return `Error is: ${error}`;
   if (!country) return 'What we do for not country';
 
   const {
